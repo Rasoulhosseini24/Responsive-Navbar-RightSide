@@ -1,0 +1,139 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+.container{
+background-color: cadetblue;
+width: 100%;
+height: 1000px;
+}
+
+.hamburger{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+width: 40px;
+height: 25px;
+position: fixed;
+right: 0;
+margin: 24px;
+z-index: 1;
+cursor: pointer;
+}
+
+.hamburger span{
+width: 100%;
+height: 5px;
+background-color: green;
+border-radius: 8px;
+transition: all .7s ease;
+}
+
+.hamburger:hover span:nth-child(2){
+margin-left: 20px;
+}
+
+
+.hamburger.in-active span:nth-child(1){
+transform: translate(0,10px) rotate(-45deg) ;
+}
+
+.hamburger.in-active span:nth-child(2){
+opacity: 0;
+}
+
+.hamburger.in-active span:nth-child(3){
+transform: translate(0px,-10px) rotate(45deg) ;
+}
+
+nav{
+width: 300px;
+height: 600px;
+background-color: gray;
+float: right;
+border-bottom-left-radius:40px ;
+border-top-left-radius:40px ;
+margin-top: 10px;
+transition: all .9s ease;
+}
+
+nav ul{
+list-style: none;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 35px 0;
+}
+
+nav ul li{
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+nav ul li a{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+padding: 10px;
+color: black;
+font-size: 20px;
+font-family: Arial, Helvetica, sans-serif;
+text-transform: uppercase;
+font-weight: bold;
+height: 100%;
+width: 130px;
+margin: 35px 0;
+position: relative;
+bottom: 0;
+top: 0;
+left: 0;
+right: 0;
+}
+
+li a::before{
+content: ' ';
+position: absolute;
+left: 0;
+bottom: 0;
+width: 0;
+height: 0;
+border-left: 3px solid transparent;
+border-bottom: 3px solid transparent;
+transition: all .9s ease;
+}
+
+li a::after{
+content: ' ';
+position: absolute;
+right: 0;
+top: 0;
+width: 0;
+height: 0;
+border-right: 3px solid transparent;
+border-top: 3px solid transparent;
+transition: all .9s ease;
+}
+
+
+li a:hover::after,
+li a:hover::before{
+width: 90%;
+height: 90%;
+border-color: black
+}
+
+
+.none{
+opacity: 0;
+transition: all ease .9s;
+}
